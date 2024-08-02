@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Странная страница</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+    <div class="container strange">
+        <h1>Это странная страница!</h1>
+        <p>Нажмите на кнопку ниже, чтобы вернуться на главную страницу.</p>
+        <button id="blueButton" class="glowing-button">Вернуться на главную!</button>
+        
+        <py-script>
+            def strange_message():
+                return "Это сообщение от PyScript: все странно!"
+
+            document.querySelector('.strange').innerHTML += "<p>" + strange_message() + "</p>"
+        </py-script>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
