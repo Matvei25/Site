@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+}
+
+.glowing-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px blue, 0 0 20px blue, 0 0 30px blue;
+    transition: all 0.3s ease;
+}
+
+.glowing-button:hover {
+    box-shadow: 0 0 20px lightblue, 0 0 30px lightblue, 0 0 40px lightblue;
+}
