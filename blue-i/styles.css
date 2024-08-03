@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+main {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.blue-i {
+    font-size: 50px;
+    position: absolute;
+    bottom: 150px; /* Начальная позиция */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: bottom 1s ease; /* Анимация движения */
+}
+
+.cake-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px; /* Отступ сверху для тортиков */
+}
+
+.cake {
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+    border-radius: 50%;
+    margin: 0 10px;
+}
