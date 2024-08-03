@@ -24,6 +24,7 @@ main {
     left: 50%;
     transform: translateX(-50%);
     transition: bottom 1s ease; /* Анимация движения */
+    background-color: blue;
 }
 
 .cake-container {
