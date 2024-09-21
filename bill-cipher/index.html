@@ -11,39 +11,94 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #282c34;
             color: white;
             font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden; /* Скрываем переполнение */
+            animation: backgroundChange 10s linear infinite; /* Анимация градиента */
+            position: relative; /* Для позиционирования текста */
         }
+
+        .background {
+            position: absolute; /* Текст будет на фоне */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Завести текст за другие элементы */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            opacity: 0.5; /* Полупрозрачный текст */
+            white-space: nowrap; /* Не разбивать текст */
+            overflow: hidden; /* Прятать лишний текст */
+            animation: slide 30s linear infinite; /* Анимация текста */
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        @keyframes backgroundChange {
+            0% { background: linear-gradient(45deg, #ff6b6b, #f7d94f); }
+            50% { background: linear-gradient(45deg, #6bff6b, #4f88f7); }
+            100% { background: linear-gradient(45deg, #6b6bff, #f76bca); }
+        }
+
         svg {
             width: 300px;
             height: auto;
             animation: rotate 5s linear infinite;
+            position: relative;
+            z-index: 1; /* Чтобы svg был выше фона */
         }
+        
         @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
     <h1>Добро пожаловать в мир Билла Шифра!</h1>
+    <div class="background" id="randomText"></div> <!-- Контейнер для текста -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-        <!-- Треугольник -->
         <polygon points="100,10 30,180 170,180" fill="yellow"/>
-        <!-- Глаз -->
         <circle cx="100" cy="100" r="20" fill="black"/>
-        <circle cx="100" cy="100" r="10" fill="lightyellow"/>
+        <circle cx="100" cy="100" r="10" fill="white"/>
     </svg>
+    
     <script>
-        // Пример JS-кода для взаимодействия
-        document.querySelector('svg').addEventListener('click', function () {
-            alert('Is so funny how dumb you are!');
-        });
+        // Генерация случайного текста
+        const randomTextArray = [
+            "Я у тебя в стенах.",
+            "Привет, мир!",
+            "Всё возможно!",
+            "Где мой шоколад?",
+            "Астральные приключения",
+            "Что дальше?",
+            "Хаос и порядок",
+            "Билл Шифр здесь!",
+            "Изучаем HTML, CSS, JS",
+            "Всё становится возможным"
+        ];
+
+        function setRandomText() {
+            const randomTextElement = document.getElementById("randomText");
+            const randomIndex = Math.floor(Math.random() * randomTextArray.length);
+            randomTextElement.textContent = randomTextArray[randomIndex];
+        }
+
+        // Установка случайного текста и цвета
+        setRandomText();
+        document.body.style.color = `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`;
+
+        // Обновление текста и цвета при загрузке страницы
+        window.onload = function() {
+            setRandomText();
+        }
     </script>
 </body>
 </html>
