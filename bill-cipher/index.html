@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Билл Шифр</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #282c34;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        svg {
+            width: 300px;
+            height: auto;
+            animation: rotate 5s linear infinite;
+        }
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Добро пожаловать в мир Билла Шифра!</h1>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+        <polygon points="100,10 40,198 190,78 10,78 160,198" fill="yellow"/>
+        <circle cx="100" cy="100" r="30" fill="black"/>
+        <circle cx="85" cy="85" r="5" fill="white"/>
+        <circle cx="115" cy="85" r="5" fill="white"/>
+        <path d="M70,130 Q100,150 130,130" stroke="white" stroke-width="3" fill="none"/>
+    </svg>
+    <script>
+        // Пример JS-кода для взаимодействия
+        document.querySelector('svg').addEventListener('click', function () {
+            alert('Билл говорит: "Я вампир!"');
+        });
+    </script>
+</body>
+</html>
