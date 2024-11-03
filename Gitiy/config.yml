@@ -1,0 +1,6 @@
+job:
+  create_account:
+    description: "Создание нового аккаунта"
+    parameters:
+      username: "Имя пользователя"
+      password: "Пароль"
